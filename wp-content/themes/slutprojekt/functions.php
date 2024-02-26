@@ -1,5 +1,5 @@
 <?php
-require_once("Vite.php");
+require_once("vite.php");
 
 require_once(get_template_directory() . "/init.php");
 

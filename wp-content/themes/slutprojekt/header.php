@@ -6,3 +6,6 @@
 
 <body>
     <?php wp_body_open(); ?>
+
+</body>
+</html>
