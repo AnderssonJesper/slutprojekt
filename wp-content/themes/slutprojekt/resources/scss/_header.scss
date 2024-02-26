@@ -1,0 +1,144 @@
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 40px;
+    background-color: red;
+    color: $header-main;
+    
+    
+    .header1, .header2{
+        border-bottom: 2px solid black;
+    }
+    .header1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+
+        h1{
+          font-size: 28px;
+          font-weight: 700; 
+        }
+
+        .menu{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li{
+                display: inline-block;
+                margin-left: 20px;
+
+                &:first-child{
+                    margin-left: 0;
+                }
+                a{
+                    text-decoration: none;
+                    font-size: 0;
+    
+                }
+            }
+        }
+    }
+    #menu-item-22 a {
+    position: relative; 
+    padding-left: 30px;
+}
+  
+
+#menu-item-22 a::before {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    transform: translateY(-50%);
+    width: 27px; 
+    height: 27px; 
+    background-image: url('http://slutprojekt.test/wp-content/uploads/2024/02/Vector.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+           #menu-item-23 a {
+    position: relative; 
+    padding-left: 30px; 
+}
+
+#menu-item-23 a::before {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    transform: translateY(-50%); 
+    width: 22.17px; 
+    height: 29.57px; 
+    background-image: url('http://slutprojekt.test/wp-content/uploads/2024/02/Acoount.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+}
+           #menu-item-24 a {
+    position: relative; 
+    padding-left: 30px; 
+}
+
+#menu-item-24 a::before {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    transform: translateY(-50%); 
+    width: 34px; 
+    height: 34px; 
+    background-image: url('http://slutprojekt.test/wp-content/uploads/2024/02/Cart.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+}
+    #menu-item-25 a {
+    position: relative; 
+    padding-left: 30px; 
+}
+
+#menu-item-25 a::before {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    transform: translateY(-50%); 
+    width: 29.41px; 
+    height: 27.58px; 
+    background-image: url('http://slutprojekt.test/wp-content/uploads/2024/02/Heart.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+}
+
+.header2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+    font-size: $header-text-size;
+    
+
+
+    .menu{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+
+        li{
+            margin-left: 20px;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+        a{
+        text-decoration: none;
+        color: $header-main;
+        padding: 20px;
+        }
+    }
+}
+}

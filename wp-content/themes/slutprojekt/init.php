@@ -14,3 +14,16 @@ function baseTheme_enqueue()
 
 
 add_action('wp_enqueue_scripts', 'baseTheme_enqueue');
+
+function baseTheme_init()
+{
+    $menu = array(
+        'huvudmeny' => 'Huvudmeny',
+        'header_information' => 'header_information',
+        'footer_information' => 'footer_information',
+    );
+
+    register_nav_menus($menu);
+}
+
+add_action('after_setup_theme', 'baseTheme_init');
