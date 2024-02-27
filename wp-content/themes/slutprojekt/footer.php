@@ -43,10 +43,11 @@
             wp_nav_menu($menu_args);
             ?>
         </div>
+
+        
         <div class="footer-column footer-column-4">
             <h2>From the blog</h2>
             <?php
-            // Skapa en ny WP_Query för att hämta de senaste två inläggen
             $args = array(
                 'post_type'      => 'post',
                 'posts_per_page' => 2, // Antal inlägg att visa
@@ -55,10 +56,16 @@
 
             // Loopa igenom inläggen
             if ($query->have_posts()) :
-                echo '<ul>'; // Öppna en lista för att visa inläggen
+                echo '<ul class="custom-post-list">'; // Öppna en lista för att visa inläggen
+                $post_count = 0; // Räkna antalet inlägg
                 while ($query->have_posts()) : $query->the_post();
+                    $post_count++; // Öka räknaren för varje inlägg
             ?>
-                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                    <li>
+                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <p><?php the_excerpt(); ?></p>
+                        <p><?php comments_number('0', '1', '%'); ?> comments</p>
+                    </li>
             <?php
                 endwhile;
                 echo '</ul>'; // Stäng listan
@@ -68,6 +75,9 @@
                 echo 'Inga inlägg hittades.';
             endif;
             ?>
+
+
+
         </div>
     </div>
     <div class="footer-rights">

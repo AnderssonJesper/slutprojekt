@@ -10,6 +10,7 @@ $footer-line-height: 16.41px;
 
 .footer-content {
   display: flex;
+  background-color: $footer-background-color;
 
   .footer-column {
     box-sizing: border-box;
@@ -122,9 +123,9 @@ $footer-line-height: 16.41px;
   .footer-column-4 {
     background-color: $footer-background-color;
     color: $footer-text-color;
-    width: 34%;
+    width: 20%;
     padding-top: 87px;
-  
+
     h2 {
       text-transform: uppercase;
       font-family: $footer-font;
@@ -134,31 +135,46 @@ $footer-line-height: 16.41px;
       line-height: 19px;
       text-align: left;
     }
-  
-    ul {
+
+    .custom-post-list {
       list-style: none;
-      padding: 0;
       margin: 0;
       text-align: left;
-  
+      padding: 0;
+
       li {
-        margin-bottom: 10px;
         font-family: $footer-font;
         font-size: $footer-font-size;
         line-height: $footer-line-height;
-  
+        padding-top: 3px;
+
+        p{
+          padding: 0 0 10 0;
+        }
+
         a {
           color: $footer-link-color;
           text-decoration: none;
-  
+          color: #ffffff80; /* Färgen för rubrikerna */
+          font-family: "Roboto", sans-serif; /* Använd Roboto-fonten */
+          font-weight: 400; /* Vikt 400 */
+          font-size: 24px; /* Storlek 24px */
+          text-align: left;
+          text-transform: uppercase;
+
           &:hover {
             text-decoration: $footer-link-hover-color;
           }
         }
       }
+
+      li:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+      }
     }
   }
-}  
+}
 
 .footer-rights {
   text-align: center;
