@@ -19,6 +19,8 @@ function slutprojekt_register_menus()
         'primary-menu' => esc_html__('Primary Menu', 'slutprojekt'),
         'footer-menu'  => esc_html__('Footer Menu', 'slutprojekt'),
         'header-icon'  => esc_html__('Header-Icon', 'slutprojekt'),
+        'Shopping'  => esc_html__('Shopping', 'slutprojekt'),
+        'More link'  => esc_html__('More link', 'slutprojekt'),
     ));
 }
 add_action('init', 'slutprojekt_register_menus');
