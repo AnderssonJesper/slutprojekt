@@ -2,6 +2,7 @@
 @import "_header.scss";
 @import "_homepage.scss";
 @import "_product-page.scss";
+@import "_footer.scss";
 
 @font-face {
     font-family: 'Roboto';
@@ -26,6 +27,13 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Bold.ttf') format('truetype');
     font-weight: 700; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
 }
 
