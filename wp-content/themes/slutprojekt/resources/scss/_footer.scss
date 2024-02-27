@@ -3,6 +3,10 @@ $footer-text-color: #ffffff;
 $footer-link-color: #ffffff;
 $footer-link-hover-color: underline;
 $footer-padding: 10px;
+$footer-font: "Roboto", sans-serif;
+$footer-font-weight: 300;
+$footer-font-size: 14px;
+$footer-line-height: 16.41px;
 
 .footer-content {
   display: flex;
@@ -25,7 +29,7 @@ $footer-padding: 10px;
 
     h2,
     p {
-      font-family: "Roboto", sans-serif;
+      font-family: $footer-font;
     }
 
     h2 {
@@ -51,7 +55,7 @@ $footer-padding: 10px;
       margin-top: 5px;
 
       a {
-        font-size: 16px;
+        font-size: $footer-font-size;
         font-weight: 700;
         line-height: 22px;
         letter-spacing: 0em;
@@ -79,37 +83,89 @@ $footer-padding: 10px;
 
   .footer-column-2,
   .footer-column-3 {
+    padding-top: 87px;
     width: 16%;
     background-color: $footer-background-color;
     color: $footer-text-color;
-  }
 
-  .footer-column-2 {
-    padding-top: 87px;
     h2 {
       text-transform: uppercase;
-      font-family: Roboto, sans-serif;
+      font-family: $footer-font;
       font-size: 16px;
       font-weight: 700;
       letter-spacing: 0em;
-
       line-height: 19px;
       text-align: left;
+    }
+
+    .menu {
+      font-family: $footer-font;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-weight: $footer-font-weight;
+      font-size: $footer-font-size;
+      line-height: $footer-line-height;
+      text-align: left;
+
+      li {
+        padding: 10px 0;
+      }
+
+      a {
+        color: $footer-link-color;
+        text-decoration: none;
+      }
     }
   }
 
   .footer-column-4 {
-    background-color: rgb(255, 0, 0);
+    background-color: $footer-background-color;
+    color: $footer-text-color;
     width: 34%;
+    padding-top: 87px;
+  
+    h2 {
+      text-transform: uppercase;
+      font-family: $footer-font;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      line-height: 19px;
+      text-align: left;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+  
+      li {
+        margin-bottom: 10px;
+        font-family: $footer-font;
+        font-size: $footer-font-size;
+        line-height: $footer-line-height;
+  
+        a {
+          color: $footer-link-color;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: $footer-link-hover-color;
+          }
+        }
+      }
+    }
   }
-}
+}  
 
 .footer-rights {
   text-align: center;
   padding: $footer-padding;
   background-color: black;
   color: white;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16.41px;
+  font-weight: $footer-font-weight;
+  font-size: $footer-font-size;
+  line-height: $footer-line-height;
 }
