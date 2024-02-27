@@ -1,4 +1,12 @@
 {
+  "resources/fonts/Roboto-Bold.ttf": {
+    "file": "assets/Roboto-Bold.ttf",
+    "src": "resources/fonts/Roboto-Bold.ttf"
+  },
+  "resources/fonts/Roboto-Regular.ttf": {
+    "file": "assets/Roboto-Regular.ttf",
+    "src": "resources/fonts/Roboto-Regular.ttf"
+  },
   "resources/js/app.js": {
     "file": "assets/app.js",
     "isEntry": true,
