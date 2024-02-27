@@ -32,7 +32,6 @@ do_action('woocommerce_before_main_content');
 ?>
 <div class="banner">
 	<?php
-	// Hämta bild och text från anpassade inställningar
 	$banner_image = get_theme_mod('banner_image');
 	$h1_text = get_theme_mod('h1_text');
 	$h2_text = get_theme_mod('h2_text');

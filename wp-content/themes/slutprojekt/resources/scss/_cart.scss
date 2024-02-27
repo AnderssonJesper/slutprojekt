@@ -1,0 +1,19 @@
+.woocommerce-cart-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    .cart-collaterals{
+        padding-right: 5%;
+
+        .cart_totals{
+            h2{
+                display: none;
+            }
+            .shop_table{
+                border: none;
+            }
+        }
+    }
+}

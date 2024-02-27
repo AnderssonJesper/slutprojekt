@@ -6,6 +6,8 @@
             text-decoration: none;
             color: $product-color;
             font-size: $product-size-medium;
+
+           
     }
 
 }
@@ -39,12 +41,96 @@ flex-direction: column;
    }
 }
 
+.not-available{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #00000080;
+    font-size: $product-font-size-medium;
+
+
+    img{
+        margin-right: 5px;
+    }
+}
+
+label{
+    display: none;
+}
+ .reset_variations{
+        display: none;
+    }
+
+#size{
+    padding: 15px 150px;
+    font-size: $product-font-size-medium;
+    border: 1px solid $product-color;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-left: -3px;
+    text-align: left;
+
+
+}
+.attribute_size{
+    margin-right: -30px;
+}
+
+.quantity{
+    display: none;
+}
+
+.button.alt {
+  margin-top: 20px;
+  background-color: $product-color; 
+  color: #fff; 
+  border: none; 
+  padding: 18px 108px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer;
+}
+
+
+
+.button.alt:hover {
+  background-color: #eb6810;
+}
+
+
+.woocommerce-product-gallery__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.woocommerce-product-gallery__image{
+    flex: 1 1 33.33%;
+    margin-bottom: 0;
+    padding-left: 80px;
+    margin-top: 60px;
+}
+
+.woocommerce-product-gallery__image:nth-child(1) img {
+    width: 25rem;
+    height: 30rem; 
+}
+.woocommerce-product-gallery__image:nth-child(2) img {
+    width: 25rem; 
+    margin-left: -140px;
+    height: 30em; 
+}
+.woocommerce-product-gallery__image:nth-child(3) img {
+    width: 52rem;
+    height: 35rem; 
+}
+
+
 .product_meta{
     display: none;
 }
-.woocommerce-product-gallery__image {
-    display: none;
-}
+
  .attachment-full.size-full{
         padding-left: 80px;
         padding-top: 60px;
@@ -67,7 +153,8 @@ flex-direction: column;
     padding-left: 80px;
     background-color:#F0EFED;
     margin-left: 78px;
-    margin-right: 43%;
+    margin-right: 45%;
+    margin-bottom: 80px;
     
 }
 
@@ -85,6 +172,7 @@ flex-direction: column;
 .related.products{
     overflow: hidden;
     padding: 0;
+    padding-bottom: 100px;
     
 
     h2{
@@ -145,12 +233,12 @@ span.price::after{
 }
 
 span.price::before {
-  background-color: #DDEDD6; /* Färg för den första cirkeln */
+  background-color: #DDEDD6;
 }
 
 span.price::after {
-  left: 15px; /* Justera avståndet mellan den första och andra cirkeln */
-  background-color: #eb6810; /* Färg för den andra cirkeln */
+  left: 15px; 
+  background-color: #eb6810; 
 }
 
 
@@ -170,7 +258,9 @@ span.price::after {
 
 
 
-
+#reviews{
+    display: none;
+}
 
 
 #searchform{

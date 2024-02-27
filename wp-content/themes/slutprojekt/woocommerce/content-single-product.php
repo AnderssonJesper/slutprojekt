@@ -51,16 +51,7 @@ if (post_password_required()) {
 		do_action('woocommerce_single_product_summary');
 		?>
 	</div>
-	<?php
-	// Check if there are gallery images
-	$attachment_ids = $product->get_gallery_image_ids();
-	if ($attachment_ids) {
-		// Output gallery images
-		foreach ($attachment_ids as $attachment_id) {
-			echo wp_get_attachment_image($attachment_id, 'full');
-		}
-	}
-	?>
+	
 
 	<?php
 	/**

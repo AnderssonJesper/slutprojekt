@@ -92,6 +92,40 @@ add_action('customize_register', 'theme_customize_register');
 
 
 //Produkt sida
+
+
+
+
+add_filter('woocommerce_get_breadcrumb', 'remove_first_breadcrumb', 10, 2);
+
+function remove_first_breadcrumb($crumbs, $breadcrumb)
+{
+    array_shift($crumbs);
+    return $crumbs;
+}
+
+
+
+global $product; // Definiera $product globalt
+
+$show_gallery = true; // Lägg till logik här för att avgöra när galleribilderna ska visas
+
+if ($show_gallery && $product) { // Kontrollera att $product är definierad innan du använder den
+    $attachment_ids = $product->get_gallery_image_ids();
+    if ($attachment_ids) {
+        // Det finns galleribilder, visa dem
+        foreach ($attachment_ids as $attachment_id) {
+            echo wp_get_attachment_image($attachment_id, 'full');
+        }
+    } else {
+        // Det finns inga galleribilder, visa primära produktbilden
+        echo get_the_post_thumbnail($product->get_id(), 'full');
+    }
+}
+
+
+
+
 add_filter('gettext', 'change_related_products_text', 20, 3);
 function change_related_products_text($translated_text, $text, $domain)
 {
@@ -111,6 +145,31 @@ function add_miniature_image_after_short_description()
         echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '" class="miniature-image" />';
     }
 }
+
+add_action('woocommerce_single_product_summary', 'add_not_available_text', 25);
+function add_not_available_text()
+{
+    echo '<div class="not-available">';
+    echo '<img src="http://slutprojekt.test/wp-content/uploads/2024/02/pin.png">';
+    echo '<span class="text">Not available in stores</span>';
+    echo '</div>';
+}
+
+add_filter('woocommerce_dropdown_variation_attribute_options_args', 'custom_dropdown_options_args', 10, 1);
+function custom_dropdown_options_args($args)
+{
+    $args['show_option_none'] = __('Select size', 'woocommerce');
+    return $args;
+}
+
+add_filter('woocommerce_product_single_add_to_cart_text', 'change_add_to_cart_button_text');
+
+function change_add_to_cart_button_text($text)
+{
+    return __('ADD TO SHOPPING BAG', 'woocommerce');
+}
+
+
 
 
 
