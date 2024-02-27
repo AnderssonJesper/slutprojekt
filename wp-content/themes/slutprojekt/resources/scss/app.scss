@@ -9,6 +9,19 @@
     font-weight: normal; 
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype'); /* Lägg till källa för tunn font */
+    font-weight: 300; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype'); /* Lägg till källa för tunn font */
+    font-weight: 500; 
+    font-style: normal;
+}
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Bold.ttf') format('truetype');

@@ -20,9 +20,23 @@ flex-direction: column;
 
     .product_title.entry-title{
         margin-top: 60px;
+        font-size: $product-font-size-large;
+        font-weight: $product-weight-medium;
+
     }
 
-   
+        .price{
+            font-size: 24px;
+            font-weight: $product-weight-medium;
+        }
+   .miniature-image{
+    display: block;
+    margin-top: 10px;
+    width: 53px;
+    height: 72px;
+    border: 1px solid $product-color;
+    margin-bottom: 30px;
+   }
 }
 
 .product_meta{
@@ -49,9 +63,120 @@ flex-direction: column;
 #tab-description h2{
     display: none;
 }
+.woocommerce-tabs.wc-tabs-wrapper{
+    padding-left: 80px;
+    background-color:#F0EFED;
+    margin-left: 78px;
+    margin-right: 43%;
+    
+}
 
 #tab-description{
-    background-color:#F0EFED;
-    width: 60%
+    width: 80%;
+    font-size: $product-font-size-medium;
+    font-weight: $product-weight-small;
+    height: 30%;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-left: 60px;
 
+}
+
+.related.products{
+    overflow: hidden;
+    padding: 0;
+    
+
+    h2{
+        padding-left: 70px;
+        
+    }
+
+    a{
+            text-decoration: none;
+    }
+
+    ul.products{
+       display: flex;
+       align-items: center;
+       text-decoration: none;
+       list-style: none;
+       padding-left: 70px;
+       
+       
+
+       img{
+        margin-right: 40px;
+        
+
+        
+        
+       }
+    }
+
+    .woocommerce-loop-product__title{
+    padding: 0;
+    color: $product-color;
+    font-size: $product-size-medium; 
+    font-weight: $header-weight;
+
+   
+   
+   }
+   ul.products.columns-4 li.product a.button {
+  display: none;
+}
+
+span.price {
+  position: relative;
+}
+
+span.price::before,
+span.price::after{
+
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+span.price::before {
+  background-color: #DDEDD6; /* Färg för den första cirkeln */
+}
+
+span.price::after {
+  left: 15px; /* Justera avståndet mellan den första och andra cirkeln */
+  background-color: #eb6810; /* Färg för den andra cirkeln */
+}
+
+
+
+
+
+ span.price .woocommerce-Price-amount {
+    color: $product-color;
+    font-size: 24px;
+    font-weight: $header-weight;
+}
+
+}
+
+
+
+
+
+
+
+
+
+#searchform{
+    display: none;
+}
+
+#sidebar{
+    display: none;
 }

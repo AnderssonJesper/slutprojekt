@@ -23,6 +23,8 @@ function slutprojekt_register_menus()
 }
 add_action('init', 'slutprojekt_register_menus');
 
+
+//Wordpress admin inställningar
 function theme_customize_register($wp_customize)
 {
     $wp_customize->add_section('header_settings', array(
@@ -74,7 +76,6 @@ function theme_customize_register($wp_customize)
         'type' => 'text',
     ));
 
-    // P Settings
     $wp_customize->add_setting('p_text', array(
         'default' => __('Default P Text', 'mytheme'),
         'sanitize_callback' => 'sanitize_text_field',
@@ -90,6 +91,26 @@ function theme_customize_register($wp_customize)
 add_action('customize_register', 'theme_customize_register');
 
 
+//Produkt sida
+add_filter('gettext', 'change_related_products_text', 20, 3);
+function change_related_products_text($translated_text, $text, $domain)
+{
+    if ($text === 'Related products') {
+        $translated_text = __('Also You May Like', 'woocommerce');
+    }
+    return $translated_text;
+}
+
+add_action('woocommerce_single_product_summary', 'add_miniature_image_after_short_description', 25);
+function add_miniature_image_after_short_description()
+{
+    global $product;
+
+    if (has_post_thumbnail($product->get_id())) {
+        $thumbnail_url = get_the_post_thumbnail_url($product->get_id(), 'thumbnail');
+        echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '" class="miniature-image" />';
+    }
+}
 
 
 
