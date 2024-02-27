@@ -1,0 +1,78 @@
+// Gemensamma stilar för text
+$font-family: 'Roboto', sans-serif;
+$text-color: #323334;
+
+// Banner
+.banner {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+
+    h1, h2 {
+      font-family: $font-family;
+      color: $text-color;
+    }
+
+    h1 {
+      font-weight: 500;
+      font-size: 33px;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 28px;
+      margin-top: -5px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 21.09px;
+      color: $text-color;
+      padding-top: 40px;
+    }
+  }
+}
+
+// Produktlisningen
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Visa tre produkter per rad
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none; // Ta bort punktlistan från produkterna
+
+  a.woocommerce-LoopProduct-link {
+    text-decoration: none; // Ta bort textdekoration från länken
+    display: block; // Visa länken som blockelement för att täcka hela produktrutan
+    padding: 15px; // Lägg till lite utrymme runt länken för att göra hela produktrutan klickbar
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 14px;
+    color: $text-color;
+  }
+
+  .price {
+    @extend .woocommerce-LoopProduct-link; // Använd gemensamma egenskaper från länken
+    font-size: 18px;
+  }
+
+  .button {
+    display: none; // Dölj knapparna
+  }
+}
