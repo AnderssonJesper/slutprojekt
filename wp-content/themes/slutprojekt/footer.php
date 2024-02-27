@@ -21,9 +21,27 @@
         </div>
         <div class="footer-column footer-column-2">
             <h2>Shopping</h2>
+            <?php
+            $menu_args = array(
+                'menu'            => 'Shopping', 
+                'menu_id'         => 'shopping-menu',
+                'container'       => 'nav',
+                'container_class' => 'menu',
+            );
+            wp_nav_menu($menu_args);
+            ?>
         </div>
         <div class="footer-column footer-column-3">
-            <p>Gul kolumn (20%)</p>
+            <h2>More Link</h2>
+            <?php
+            $menu_args = array(
+                'menu'            => 'More link', 
+                'menu_id'         => 'more-link-menu',
+                'container'       => 'nav',
+                'container_class' => 'menu',
+            );
+            wp_nav_menu($menu_args);
+            ?>
         </div>
         <div class="footer-column footer-column-4">
             <p>Röd kolumn (40%)</p>
