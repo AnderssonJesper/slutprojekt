@@ -23,7 +23,7 @@
             <h2>Shopping</h2>
             <?php
             $menu_args = array(
-                'menu'            => 'Shopping', 
+                'menu'            => 'Shopping',
                 'menu_id'         => 'shopping-menu',
                 'container'       => 'nav',
                 'container_class' => 'menu',
@@ -35,7 +35,7 @@
             <h2>More Link</h2>
             <?php
             $menu_args = array(
-                'menu'            => 'More link', 
+                'menu'            => 'More link',
                 'menu_id'         => 'more-link-menu',
                 'container'       => 'nav',
                 'container_class' => 'menu',
@@ -44,7 +44,30 @@
             ?>
         </div>
         <div class="footer-column footer-column-4">
-            <p>Röd kolumn (40%)</p>
+            <h2>From the blog</h2>
+            <?php
+            // Skapa en ny WP_Query för att hämta de senaste två inläggen
+            $args = array(
+                'post_type'      => 'post',
+                'posts_per_page' => 2, // Antal inlägg att visa
+            );
+            $query = new WP_Query($args);
+
+            // Loopa igenom inläggen
+            if ($query->have_posts()) :
+                echo '<ul>'; // Öppna en lista för att visa inläggen
+                while ($query->have_posts()) : $query->the_post();
+            ?>
+                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php
+                endwhile;
+                echo '</ul>'; // Stäng listan
+                wp_reset_postdata(); // Återställ postdata
+            else :
+                // Om inga inlägg hittades
+                echo 'Inga inlägg hittades.';
+            endif;
+            ?>
         </div>
     </div>
     <div class="footer-rights">

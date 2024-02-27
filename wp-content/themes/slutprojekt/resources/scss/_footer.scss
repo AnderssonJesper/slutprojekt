@@ -120,10 +120,45 @@ $footer-line-height: 16.41px;
   }
 
   .footer-column-4 {
-    background-color: rgb(255, 0, 0);
+    background-color: $footer-background-color;
+    color: $footer-text-color;
     width: 34%;
+    padding-top: 87px;
+  
+    h2 {
+      text-transform: uppercase;
+      font-family: $footer-font;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      line-height: 19px;
+      text-align: left;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+  
+      li {
+        margin-bottom: 10px;
+        font-family: $footer-font;
+        font-size: $footer-font-size;
+        line-height: $footer-line-height;
+  
+        a {
+          color: $footer-link-color;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: $footer-link-hover-color;
+          }
+        }
+      }
+    }
   }
-}
+}  
 
 .footer-rights {
   text-align: center;
