@@ -1,9 +1,15 @@
+$footer-background-color: #323334;
+$footer-text-color: #ffffff;
+$footer-link-color: #ffffff;
+$footer-link-hover-color: underline;
+$footer-padding: 10px;
+
 .footer-content {
   display: flex;
 
   .footer-column {
     box-sizing: border-box;
-    padding: 10px;
+    padding: $footer-padding;
     text-align: center; /* Centrera texten */
 
     p {
@@ -12,9 +18,9 @@
   }
 
   .footer-column-1 {
-    background-color: #323334;
+    background-color: $footer-background-color;
     max-width: 34%;
-    padding: 100;
+    padding: 100px;
     text-align: left;
 
     h2,
@@ -23,7 +29,7 @@
     }
 
     h2 {
-      color: #ffffff;
+      color: $footer-text-color;
       font-size: 28px;
       font-weight: 700;
       line-height: 33px;
@@ -38,7 +44,7 @@
       font-weight: 400;
       line-height: 22px;
       letter-spacing: 0em;
-      color: #ffffff80;
+      color: rgba($footer-text-color, 0.5);
     }
 
     .footer-links {
@@ -50,37 +56,46 @@
         line-height: 22px;
         letter-spacing: 0em;
         text-align: left;
-        color: #ffffff;
+        color: $footer-link-color;
         text-decoration: none;
         display: block;
-      }
 
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-    .footer-icons {
-        display: flex;
-        justify-content: center;
-      
-        img {
-            padding: 40 55 0 0;
-            margin: 0;
+        &:hover {
+          text-decoration: $footer-link-hover-color;
         }
       }
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+
+      img {
+        padding: 60px 55px 0 0;
+        margin: 0;
+      }
+    }
   }
 
   .footer-column-2,
   .footer-column-3 {
     width: 16%;
+    background-color: $footer-background-color;
+    color: $footer-text-color;
   }
 
   .footer-column-2 {
-    background-color: blue;
-  }
+    padding-top: 87px;
+    h2 {
+      text-transform: uppercase;
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0em;
 
-  .footer-column-3 {
-    background-color: yellow;
+      line-height: 19px;
+      text-align: left;
+    }
   }
 
   .footer-column-4 {
@@ -91,7 +106,7 @@
 
 .footer-rights {
   text-align: center;
-  padding: 10px;
+  padding: $footer-padding;
   background-color: black;
   color: white;
   font-weight: 300;

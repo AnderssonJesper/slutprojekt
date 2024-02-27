@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="footer-column footer-column-2">
-            <p>Blå kolumn (20%)</p>
+            <h2>Shopping</h2>
         </div>
         <div class="footer-column footer-column-3">
             <p>Gul kolumn (20%)</p>
