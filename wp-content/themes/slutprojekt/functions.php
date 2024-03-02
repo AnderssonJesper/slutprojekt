@@ -503,7 +503,7 @@ function custom_theme_customize_register($wp_customize)
         'default'   => '',
         'transport' => 'refresh',
     ));
-    
+
     $wp_customize->add_setting('homepage_email_placeholder', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -533,3 +533,19 @@ function save_newsletter_settings()
 
 add_action('admin_post_save_newsletter_settings', 'save_newsletter_settings');
 
+
+// functions.php eller ett plugin-fil
+
+add_action('init', 'remove_woocommerce_result_count');
+
+function remove_woocommerce_result_count()
+{
+    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+}
+
+function custom_bedroom_page_content()
+{
+    echo '<p class="custom-page-content">Its easy to transform your bedroom interior with our great selection of accessories.</p>';
+}
+
+add_action('woocommerce_archive_description', 'custom_bedroom_page_content');

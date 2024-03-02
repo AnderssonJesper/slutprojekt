@@ -1,78 +1,157 @@
+.woocommerce-ordering::before {
+  content: url('http://slutprojekt.test/wp-content/uploads/2024/03/Vector.png');
+  display: inline-block;
+  margin-left: 220px;
+  
+}
+
 // Gemensamma stilar för text
-$font-family: 'Roboto', sans-serif;
+$font-family: "Roboto", sans-serif;
 $text-color: #323334;
 
 // Banner
-.banner {
-  position: relative;
-  overflow: hidden;
+.shop-banner {
+position: relative;
+overflow: hidden;
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  .banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-
-    h1, h2 {
-      font-family: $font-family;
-      color: $text-color;
-    }
-
-    h1 {
-      font-weight: 500;
-      font-size: 33px;
-    }
-
-    h2 {
-      font-weight: 400;
-      font-size: 28px;
-      margin-top: -5px;
-    }
-
-    p {
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 21.09px;
-      color: $text-color;
-      padding-top: 40px;
-    }
-  }
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-// Produktlisningen
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); // Visa tre produkter per rad
-  gap: 30px;
-  padding: 0;
-  margin: 0;
-  list-style: none; // Ta bort punktlistan från produkterna
+.shop-banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 
-  a.woocommerce-LoopProduct-link {
-    text-decoration: none; // Ta bort textdekoration från länken
-    display: block; // Visa länken som blockelement för att täcka hela produktrutan
-    padding: 15px; // Lägg till lite utrymme runt länken för att göra hela produktrutan klickbar
+  h1,
+  h2 {
     font-family: $font-family;
-    font-weight: 700;
-    font-size: 14px;
     color: $text-color;
   }
 
-  .price {
-    @extend .woocommerce-LoopProduct-link; // Använd gemensamma egenskaper från länken
-    font-size: 18px;
+  h1 {
+    font-weight: 500;
+    font-size: 33px;
   }
 
-  .button {
-    display: none; // Dölj knapparna
+  h2 {
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: -5px;
   }
+
+  p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21.09px;
+    color: $text-color;
+    padding-top: 20px;
+  }
+}
+}
+
+/* Använd den unika klassen för att specificera stilen endast för denna sida */
+.woocommerce-products-header h1 {
+padding-left: 220px;
+}
+
+
+.products {
+display: grid;
+grid-template-columns: repeat(3, 1fr); // Visa tre produkter per rad
+padding: 0;
+margin: 0;
+list-style: none; // Ta bort punktlistan från produkterna
+width: 100%;
+padding-left: 200px;
+
+.woocommerce-LoopProduct-link {
+  text-decoration: none; // Ta bort textdekoration från länken
+  display: block; // Visa länken som blockelement för att täcka hela produktrutan
+  padding: 15px; // Lägg till lite utrymme runt länken för att göra hela produktrutan klickbar
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 14px;
+  color: $text-color;
+
+  .attachment-woocommerce_thumbnail {
+    width: 100%; // Bilden fyller hela utrymmet i förälderelementet
+    height: auto; // Automatisk höjd för att bibehålla proportioner
+    object-fit: cover; // Bilden fyller utrymmet och klipps om det behövs
+    aspect-ratio: 1 / 1; // Skapar en kvadratisk bild genom att sätta bildens höjd och bredd till samma värde
+  }
+}
+
+.price {
+  @extend .woocommerce-LoopProduct-link; // Använd gemensamma egenskaper från länken
+  font-size: 18px;
+}
+
+.button {
+  display: none; // Dölj knapparna
+}
+}
+
+.woocommerce-ordering {
+select.orderby {
+    border: none; // Ta bort ramen
+    appearance: none; // Ta bort standardpil
+    padding: 5 10; // Justera padding för att matcha storleken på andra element
+    margin-top: 40px;
+    font-size: inherit; // Använd samma typsnittstorlek som andra element
+    background-color: transparent; // Genomskinlig bakgrundsfärg
+    color: #333; // Textfärg
+    cursor: pointer; // Visa pekare när musen är över
+
+    option {
+        font-weight: normal; // Återställ vikt för valen
+    }
+}
+}
+
+.woocommerce-pagination {
+display: flex;
+justify-content: center;
+list-style: none;
+padding: 0;
+
+li {
+    margin: 0 5px;
+    display: inline-block;
+
+    a, span {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        color: #333;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #f9f9f9;
+        }
+
+        &.next, &.prev {
+            font-weight: bold;
+        }
+    }
+
+    &.prev.disabled, &.next.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+}
+
+.custom-page-content {
+padding-left: 220px;
+text-transform: none;
+}
+
+.page-bedroom, .page-title {
+margin-top: 80px;
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The Template for displaying product archives, including the main shop page which is a post type archive
  *
@@ -29,49 +28,55 @@ get_header('shop');
  */
 do_action('woocommerce_before_main_content');
 
-?>
-<div class="banner">
-	<?php
-	$banner_image = get_theme_mod('banner_image');
-	$h1_text = get_theme_mod('h1_text');
-	$h2_text = get_theme_mod('h2_text');
-	$p_text = get_theme_mod('p_text');
+// Anpassad titel för "page title"
+$page_title = 'BEDROOM';
 
-	if ($banner_image) {
-		echo '<img src="' . esc_url($banner_image) . '" alt="Banner">';
-	}
-	?>
-	<div class="banner-content">
-		<?php
-		if ($h1_text) {
-			echo '<h1>' . esc_html($h1_text) . '</h1>';
-		}
-		if ($h2_text) {
-			echo '<h2>' . esc_html($h2_text) . '</h2>';
-		}
-		if ($p_text) {
-			echo '<p>' . esc_html($p_text) . '</p>';
-		}
-		?>
-	</div>
+// Lägg till en unik klass för sidan "Bedroom"
+$body_class = 'page-bedroom'; // Du kan byta ut "page-bedroom" till vad som helst som är unikt för denna sida
+?>
+<body <?php body_class($body_class); ?>>
+<div class="shop-banner">
+    <?php
+    $banner_image = get_theme_mod('banner_image');
+    $h1_text = get_theme_mod('h1_text');
+    $h2_text = get_theme_mod('h2_text');
+    $p_text = get_theme_mod('p_text');
+
+    if ($banner_image) {
+        echo '<img src="' . esc_url($banner_image) . '" alt="Banner">';
+    }
+    ?>
+
+    <div class="shop-banner-content">
+        <?php
+        if ($h1_text) {
+            echo '<h1>' . esc_html($h1_text) . '</h1>';
+        }
+        if ($h2_text) {
+            echo '<h2>' . esc_html($h2_text) . '</h2>';
+        }
+        if ($p_text) {
+            echo '<p>' . esc_html($p_text) . '</p>';
+        }
+        ?>
+    </div>
 </div>
 
-
 <header class="woocommerce-products-header">
-	<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+    <!-- Anpassad titel för "page title" -->
+    <h1 class="woocommerce-products-header__title page-title"><?php echo esc_html($page_title); ?></h1>
 
-	<?php
-	/**
-	 * Hook: woocommerce_archive_description.
-	 *
-	 * @hooked woocommerce_taxonomy_archive_description - 10
-	 * @hooked woocommerce_product_archive_description - 10
-	 */
-	do_action('woocommerce_archive_description');
-	?>
+    <?php
+    /**
+     * Hook: woocommerce_archive_description.
+     *
+     * @hooked woocommerce_taxonomy_archive_description - 10
+     * @hooked woocommerce_product_archive_description - 10
+     */
+    do_action('woocommerce_archive_description');
+    ?>
 </header>
+
 <?php
 if (woocommerce_product_loop()) {
 
@@ -136,3 +141,4 @@ do_action('woocommerce_after_main_content');
 do_action('woocommerce_sidebar');
 
 get_footer('shop');
+

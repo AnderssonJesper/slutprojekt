@@ -1,0 +1,97 @@
+// Checkout Form Styles
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    .col2-set {
+      display: flex;
+      justify-content: space-between;
+  
+      .col-1, .col-2 {
+        flex: 1;
+        margin-right: 20px;
+  
+        h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+  
+        .woocommerce-billing-fields, .woocommerce-shipping-fields {
+          padding: 10px;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+  
+          p {
+            margin-bottom: 10px;
+          }
+  
+          input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  
+    #order_review {
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+  
+      h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+  
+      table.shop_table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        th, td {
+          padding: 10px;
+          border-bottom: 1px solid #ddd;
+        }
+  
+        th {
+          text-align: left;
+          font-weight: bold;
+        }
+      }
+  
+      .order-total {
+        font-weight: bold;
+      }
+  
+      .wc-proceed-to-checkout {
+        text-align: right;
+  
+        button.button {
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+  
