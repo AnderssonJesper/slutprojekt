@@ -3,6 +3,10 @@
  * Template Name: Homepage
  */
 get_header();
+
+
+
+
 ?>
 
 <head>
@@ -59,7 +63,6 @@ get_header();
                         </div>
                     </div>
 
-                    
 
 
                     <div class="image-container">
@@ -73,38 +76,54 @@ get_header();
                             </div>
 
                         </div>
+                        <div class="second-image-container">
 
-                    </div>
+                            <div class="second-image">
+                                <img src="<?php echo esc_url(get_theme_mod('second_image_background', 'url_to_second_image_background')); ?>" alt="Second Image">
+                                <div class="second-image-content">
+                                    <h1><?php echo get_theme_mod('second_image_heading', 'Second Image Heading'); ?></h1>
+                                    <p><?php echo get_theme_mod('second_image_paragraph', 'Second Image Paragraph'); ?></p>
+                                    <button><?php echo get_theme_mod('second_image_button_text', 'Button Text'); ?></button>
 
-                    <div class="entry-content">
-                        <?php the_content(); ?>
-                    </div>
+                                </div>
 
-
-
-
-
-
-
-                    <div class="banner-second" style="background-image: url('<?php echo esc_url(get_theme_mod('banner_second_background_image', 'url_to_banner_background_image')); ?>');">
-                        <div class="banner-content">
-                            <h1><?php echo esc_html(get_theme_mod('banner_second_heading', 'Banner Heading - Second')); ?></h1>
-                            <div class="price">
-                                <span class="sale-price"><?php echo esc_html(get_theme_mod('second_sale_price', '$99.99')); ?></span>
-                                <span class="regular-price"><?php echo esc_html(get_theme_mod('second_regular_price', '$129.99')); ?></span>
                             </div>
-                            <p><?php echo esc_html(get_theme_mod('banner_second_paragraph', 'Banner Paragraph - Second')); ?></p>
-                            <button><?php echo esc_html(get_theme_mod('banner_second_button_text', 'Button Text - Second')); ?></button>
+
+
                         </div>
                     </div>
 
+                        <div class="entry-content">
+                            <?php the_content(); ?>
+                        </div>
+
+
+
+                        <div class="newsletter">
+                            <div class="newsletter-content">
+                                <h1><?php echo get_theme_mod('homepage_h1_text', 'Sign Up for Our Newsletter'); ?></h1>
+                                <p><?php echo get_theme_mod('homepage_p_text', 'Subscribe to receive updates and special offers.'); ?></p>
+                            </div>
+                            <form action="" method="post" class="newsletter-form">
+                                <input type="email" name="email" placeholder="<?php echo get_theme_mod('homepage_email_placeholder', 'Enter your email address'); ?>" required>
+                                <button type="submit"><img src="<?php echo get_theme_mod('homepage_button_image', 'button_image_url_here'); ?>" alt="Subscribe"></button>
+                            </form>
+                        </div>
 
 
 
 
-                    <?php if (comments_open() || get_comments_number()) :
-                        comments_template();
-                    endif; ?>
+
+
+
+
+
+
+
+
+                        <?php if (comments_open() || get_comments_number()) :
+                            comments_template();
+                        endif; ?>
                 </article>
             <?php endwhile; ?>
         </main>

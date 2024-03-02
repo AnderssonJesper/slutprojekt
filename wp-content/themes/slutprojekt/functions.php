@@ -90,7 +90,6 @@ function theme_customize_register($wp_customize)
         'section' => 'header_settings',
         'type' => 'text',
     ));
-    
 }
 add_action('customize_register', 'theme_customize_register');
 
@@ -205,7 +204,7 @@ function custom_theme_customize_register($wp_customize)
         'settings' => 'icon_image_1',
     )));
 
-    
+
     $wp_customize->add_setting('icon_text_1', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -228,7 +227,7 @@ function custom_theme_customize_register($wp_customize)
         'settings' => 'icon_image_2',
     )));
 
-    
+
     $wp_customize->add_setting('icon_text_2', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -240,7 +239,7 @@ function custom_theme_customize_register($wp_customize)
     ));
 
     // Ikon 3
-    
+
     $wp_customize->add_setting('icon_image_3', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -251,7 +250,7 @@ function custom_theme_customize_register($wp_customize)
         'settings' => 'icon_image_3',
     )));
 
-   
+
     $wp_customize->add_setting('icon_text_3', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -262,7 +261,7 @@ function custom_theme_customize_register($wp_customize)
         'type'     => 'text',
     ));
 
-   
+
 
     // Banner
 
@@ -412,6 +411,48 @@ function custom_theme_customize_register($wp_customize)
     ));
 
 
+
+    $wp_customize->add_setting('second_image_background', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'second_image_background', array(
+        'label'    => __('Andra Bildens Bakgrundsbild', 'textdomain'),
+        'section'  => 'homepage_settings',
+        'settings' => 'second_image_background',
+    )));
+
+    $wp_customize->add_setting('second_image_heading', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('second_image_heading', array(
+        'label'    => __('Andra Bildens Rubrik', 'textdomain'),
+        'section'  => 'homepage_settings',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('second_image_paragraph', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('second_image_paragraph', array(
+        'label'    => __('Andra Bildens Text', 'textdomain'),
+        'section'  => 'homepage_settings',
+        'type'     => 'textarea',
+    ));
+
+    $wp_customize->add_setting('second_image_button_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('second_image_button_text', array(
+        'label'    => __('Andra Bildens Knapp Text', 'textdomain'),
+        'section'  => 'homepage_settings',
+        'type'     => 'text',
+    ));
+
+
     $wp_customize->add_setting('banner_second_background_image', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -423,95 +464,72 @@ function custom_theme_customize_register($wp_customize)
         'settings' => 'banner_second_background_image',
     )));
 
-    // Product 1
 
-    // Hämta 6 produkter från kategorin "Decor"
-   
-
-    
-
-
-
-
-
-
-    // Banner-second
-
-    $wp_customize->add_section('homepage_settings', array(
-        'title'    => __('Homepage Settings', 'textdomain'),
-        'priority' => 30,
-    ));
-
-    $wp_customize->add_section('banner_second_settings', array(
-        'title'    => __('Second Banner Settings', 'textdomain'),
-        'priority' => 31,
-    ));
-
-    $wp_customize->add_setting('banner_second_heading', array(
-        'default'   => 'Banner Heading - Second',
+    ///MAIL
+    $wp_customize->add_setting('homepage_h1_text', array(
+        'default'   => '',
         'transport' => 'refresh',
     ));
-
-    $wp_customize->add_control('banner_second_heading', array(
-        'label'    => __('Banner Heading - Second', 'textdomain'),
-        'section'  => 'banner_second_settings',
+    $wp_customize->add_control('homepage_h1_text', array(
+        'label'    => __('H1 Text', 'textdomain'),
+        'section'  => 'homepage_settings',
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('second_sale_price', array(
-        'default'   => '$99.99',
+    // P Text
+    $wp_customize->add_setting('homepage_p_text', array(
+        'default'   => '',
         'transport' => 'refresh',
     ));
-
-    $wp_customize->add_control('second_sale_price', array(
-        'label'    => __('Sale Price - Second', 'textdomain'),
-        'section'  => 'banner_second_settings',
-        'type'     => 'text',
-    ));
-
-    $wp_customize->add_setting('second_regular_price', array(
-        'default'   => '$129.99',
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_control('second_regular_price', array(
-        'label'    => __('Regular Price - Second', 'textdomain'),
-        'section'  => 'banner_second_settings',
-        'type'     => 'text',
-    ));
-
-    $wp_customize->add_setting('banner_second_paragraph', array(
-        'default'   => 'Banner Paragraph - Second',
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_control('banner_second_paragraph', array(
-        'label'    => __('Banner Paragraph - Second', 'textdomain'),
-        'section'  => 'banner_second_settings',
+    $wp_customize->add_control('homepage_p_text', array(
+        'label'    => __('P Text', 'textdomain'),
+        'section'  => 'homepage_settings',
         'type'     => 'textarea',
     ));
 
-    $wp_customize->add_setting('banner_second_button_text', array(
-        'default'   => 'Button Text - Second',
+    // Knappens Bild
+    $wp_customize->add_setting('homepage_button_image', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'homepage_button_image', array(
+        'label'    => __('Knappens Bild', 'textdomain'),
+        'section'  => 'homepage_settings',
+        'settings' => 'homepage_button_image',
+    )));
+
+    // Knappens Text
+    $wp_customize->add_setting('homepage_button_text', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    
+    $wp_customize->add_setting('homepage_email_placeholder', array(
+        'default'   => '',
         'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('banner_second_button_text', array(
-        'label'    => __('Banner Button Text - Second', 'textdomain'),
-        'section'  => 'banner_second_settings',
+    $wp_customize->add_control('homepage_email_placeholder', array(
+        'label'    => __('Email Placeholder', 'textdomain'),
+        'section'  => 'homepage_settings',
         'type'     => 'text',
     ));
+
+
+    // Product 1
+
 }
 add_action('customize_register', 'custom_theme_customize_register');
 
 
+function save_newsletter_settings()
+{
+    if (isset($_POST['newsletter_settings_nonce']) && wp_verify_nonce($_POST['newsletter_settings_nonce'], 'save_newsletter_settings')) {
+        update_option('newsletter_h1', $_POST['newsletter_h1']);
+        update_option('newsletter_p', $_POST['newsletter_p']);
+        update_option('newsletter_button_image', $_POST['newsletter_button_image']);
+    }
+}
 
-
-
-
-
-
-
-
-
+add_action('admin_post_save_newsletter_settings', 'save_newsletter_settings');
 
