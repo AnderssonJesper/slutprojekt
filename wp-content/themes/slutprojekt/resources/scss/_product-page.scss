@@ -12,6 +12,7 @@
 
 }
 
+
 .summary.entry-summary{
 display: flex;
 justify-content: space-between;
@@ -76,9 +77,7 @@ label{
     margin-right: -30px;
 }
 
-.quantity{
-    display: none;
-}
+
 
 .button.alt {
   margin-top: 20px;
@@ -268,5 +267,8 @@ span.price::after {
 }
 
 #sidebar{
+    display: none;
+}
+#quantity_65df51d3cca28{
     display: none;
 }
