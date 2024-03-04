@@ -1,0 +1,57 @@
+// Variabler
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+// Allmänna stilar
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Kassa betalningssektion
+#payment {
+  &.woocommerce-checkout-payment {
+    margin-top: 20px;
+
+    .wc_payment_methods {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+
+      .payment_method {
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border: 1px solid $secondary-color;
+        padding: 10px;
+        width: calc(33.333% - 20px);
+
+        &.selected {
+          border-color: $primary-color;
+        }
+      }
+    }
+
+    .form-row.place-order {
+      margin-top: 20px;
+
+      button {
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
