@@ -192,6 +192,9 @@
             border: 1px solid #fff;
             cursor: pointer;
 
+            &:hover{
+                background-color: #000;
+            }
         }   
 }
 
@@ -323,7 +326,12 @@
             border: 1px solid #fff;
             cursor: pointer;
             z-index: 9999;
+
+             &:hover{
+                background-color: #000;
+            }
         }   
+       
 }
 
 
