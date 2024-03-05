@@ -1,6 +1,7 @@
 <?php
 require_once("vite.php");
 require_once("settings.php");
+require_once("ajax.php");
 
 require_once(get_template_directory() . "/init.php");
 
@@ -26,6 +27,29 @@ function slutprojekt_register_menus()
     ));
 }
 add_action('init', 'slutprojekt_register_menus');
+
+
+
+
+function mytheme_filter_product_rating($html, $rating, $count)
+{
+    $max_rating = 5;
+    $stars = '';
+
+    $stars .= '<div class="star-rating" role="img" aria-label="' . sprintf(esc_html__('Rated %s out of 5', 'woocommerce'), $rating) . '">';
+    $filled_stars = min(5, max(0, round($rating)));
+    $stars .= str_repeat('<img src="http://slutprojekt.test/wp-content/uploads/2024/03/star-filled.png" class="filled-star" alt="Filled Star">', $filled_stars);
+
+    $empty_stars = $max_rating - $filled_stars;
+    $stars .= str_repeat('<img src="http://slutprojekt.test/wp-content/uploads/2024/03/star-unfilled.png" class="empty-star" alt="Empty Star">', $empty_stars);
+
+    $stars .= '</div>';
+
+    return $stars;
+}
+
+add_filter("woocommerce_product_get_rating_html", "mytheme_filter_product_rating", 10, 3);
+
 
 
 //Wordpress admin inställningar
@@ -134,12 +158,6 @@ function add_not_available_text()
     echo '</div>';
 }
 
-add_filter('woocommerce_dropdown_variation_attribute_options_args', 'custom_dropdown_options_args', 10, 1);
-function custom_dropdown_options_args($args)
-{
-    $args['show_option_none'] = __('Select size', 'woocommerce');
-    return $args;
-}
 
 add_filter('woocommerce_product_single_add_to_cart_text', 'change_add_to_cart_button_text');
 
@@ -549,3 +567,5 @@ function custom_bedroom_page_content()
 }
 
 add_action('woocommerce_archive_description', 'custom_bedroom_page_content');
+
+

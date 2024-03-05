@@ -81,15 +81,15 @@
     padding-left: 30px;
   }
 
-  #menu-item-24 a::before {
-    content: "";
+  #menu-item-24 a::after {
+    content: attr(data-quantity);
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    width: 34px;
-    height: 34px;
-    background-image: url("http://slutprojekt.test/wp-content/uploads/2024/02/Cart.png");
+    width: 24px;
+    height: 28px;
+    background-image: url("http://slutprojekt.test/wp-content/uploads/2024/03/Cart.png");
     background-size: contain;
     background-repeat: no-repeat;
   }

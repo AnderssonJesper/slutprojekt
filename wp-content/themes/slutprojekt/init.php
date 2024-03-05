@@ -6,10 +6,10 @@ function baseTheme_enqueue()
     $theme_directory = get_template_directory_uri();
     wp_enqueue_style("myStyle", $theme_directory . "/style.css");
     wp_enqueue_script("app", $theme_directory . "/app.js");
-
+    
    
     
-    wp_localize_script("app", "myVariables", "");
+    wp_localize_script("app", "myVariables","");
 }
 
 

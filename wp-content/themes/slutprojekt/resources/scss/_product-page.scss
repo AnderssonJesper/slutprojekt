@@ -54,28 +54,35 @@ flex-direction: column;
         margin-right: 5px;
     }
 }
+.value{
+select#size, 
+select#color{
+  
+ 
+    padding-top: 15px;
+    padding-right: 317px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    margin-left: -3px;
+    border-radius: 0;
+    border: 1px solid $product-color;
+}
+}
+
+
 
 label{
     display: none;
 }
  .reset_variations{
-        display: none;
+        text-decoration: none;
+        color: $product-color;
+        font-weight: $header-weight;
+        margin-left: 20px;
     }
 
-#size{
-    padding: 15px 150px;
-    font-size: $product-font-size-medium;
-    border: 1px solid $product-color;
-    border-radius: 4px;
-    background-color: #fff;
-    margin-left: -3px;
-    text-align: left;
 
 
-}
-.attribute_size{
-    margin-right: -30px;
-}
 
 
 
@@ -170,12 +177,15 @@ label{
 
 .related.products{
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 0;
     padding-bottom: 100px;
     
 
     h2{
-        padding-left: 70px;
+        padding-left: 80px;
         
     }
 
@@ -185,20 +195,18 @@ label{
 
     ul.products{
        display: flex;
-       align-items: center;
+       align-items: baseline;
+       justify-content: space-between;
        text-decoration: none;
        list-style: none;
-       padding-left: 70px;
+       margin-left: -135px;
        
-       
-
-       img{
-        margin-right: 40px;
-        
-
-        
-        
+       a{
+        width: 306px;
+        height: 479px;
        }
+
+       
     }
 
     .woocommerce-loop-product__title{
@@ -216,29 +224,10 @@ label{
 
 span.price {
   position: relative;
+  margin-left: -15px;
 }
 
-span.price::before,
-span.price::after{
 
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: -20px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-span.price::before {
-  background-color: #DDEDD6;
-}
-
-span.price::after {
-  left: 15px; 
-  background-color: #eb6810; 
-}
 
 
 
@@ -258,7 +247,7 @@ span.price::after {
 
 
 #reviews{
-    display: none;
+    //display: none;
 }
 
 
@@ -269,6 +258,5 @@ span.price::after {
 #sidebar{
     display: none;
 }
-#quantity_65df51d3cca28{
-    display: none;
-}
+
+
