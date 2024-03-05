@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 20px 80px;
+  padding: 25px 80px;
   color: $header-main;
 
   .header1,
@@ -44,7 +44,7 @@
   }
   #menu-item-22 a {
     position: relative;
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   #menu-item-22 a::before {
@@ -138,7 +138,7 @@
       a {
         text-decoration: none;
         color: $header-main;
-        padding: 40px;
+        padding: 45px;
       }
     }
   }

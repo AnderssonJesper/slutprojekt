@@ -62,8 +62,9 @@
     justify-content: space-between;
     margin-top: 30px;
     align-items: center;
-    width: 90%;
+    width: 91%;
     padding-left: 100px;
+    margin-bottom: 80px;
 
 
     .left-column{
@@ -123,9 +124,9 @@
 
 .image-container{
     position: relative;
-    max-width: 100%;
+    max-width: 88%;
     margin: 0 auto;
-    padding-left: 100px;
+    //padding-left: 100px;
     
     
 
@@ -144,7 +145,7 @@
             position: absolute;
             top: 63%;
             left: 10%;
-            transform: translate(-51%, - 60%);
+            transform: translate(-48%, - 60%);
             text-align: center;
             background: #00000066;
             padding:131px;
@@ -209,14 +210,14 @@
 
 
 .wc-block-product.post-176{
-   margin-left: 280px;
+   margin-left: 260px;
        margin-top: -515px;
 
 }
 
 
 .wc-block-product.post-177{
-   margin-left: 140px;
+   margin-left: 90px;
        margin-top: -515px;
 
 }
@@ -233,7 +234,7 @@
 
 }
 .wc-block-product.post-180{
-   margin-left: -250px;
+   margin-left: -275px;
        margin-top: -60px;
        padding-bottom: 80px;
        padding-right: 400px;
@@ -255,7 +256,7 @@
     position: absolute;
     top: 30%;
     left: 74%;
-    transform: translate(-30%, -14%);
+    transform: translate(-21%, -14%);
     text-align: center;
     padding: 131px;
     width: 44px;
@@ -299,7 +300,7 @@
         }
         .second-image-content p{
             text-align: left;
-            width: 75%;
+            width: 72%;
             position: absolute;
             top: 45%;
             left: 55%;

@@ -1,7 +1,8 @@
 <?php
+require_once("ajax.php");
 require_once("vite.php");
 require_once("settings.php");
-require_once("ajax.php");
+
 
 require_once(get_template_directory() . "/init.php");
 
@@ -567,5 +568,13 @@ function custom_bedroom_page_content()
 }
 
 add_action('woocommerce_archive_description', 'custom_bedroom_page_content');
+
+
+
+
+
+
+
+
 
 

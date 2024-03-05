@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/resources/js/app.js"></script>
+
 <?php
 
 /**
@@ -69,6 +72,9 @@ if (post_password_required()) {
 
 
 
+
+
+
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
@@ -80,5 +86,11 @@ if (post_password_required()) {
 	do_action('woocommerce_after_single_product_summary');
 	?>
 </div>
+<div id="related-products-container"></div>
+<button id="load-more-related-products">Visa fler produkter</button>
+
+
+
+
 
 <?php do_action('woocommerce_after_single_product'); ?>

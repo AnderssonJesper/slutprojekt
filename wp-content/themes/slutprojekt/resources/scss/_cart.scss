@@ -14,14 +14,24 @@
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
+    padding-bottom: 400px;
+
+
+   
 
     .cart-collaterals{
         padding-right: 5%;
         position: relative;
+        //margin-bottom: 50px;
+        //margin-top: 130px;
+            margin-bottom: -170px;
+
+        
 
         .cart_totals{
             background-color: #ECEBE9B2;
             padding: 60px;
+            margin-top: 20px;
             p{
                     font-weight: $product-weight-small;
                     color: $product-color;
@@ -77,6 +87,7 @@
 
             .shop_table{
                 border: none;
+                
 
                 font-size: $product-size-small;
                 
@@ -88,6 +99,7 @@
                 align-items: center;
                    margin-left: -11px;
                    margin-bottom: -20px;
+                   
                    
 
                  
@@ -103,6 +115,7 @@
                 
 
                 .order-total{
+                    
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -117,7 +130,7 @@
             .woocommerce-Price-amount.amount{
                 font-weight: $product-weight-medium;
                 font-size: $product-size-small;
-                margin-right: -10px;
+               // margin-right: -10px;
             }
 
            
@@ -139,12 +152,15 @@
 .woocommerce table.shop_table {
     border: none;
     padding-bottom: 100px;
-    padding-top: 60px;
+    
+    
     tr {
+        
         td {
             position: relative;
             padding: 20px;
             border: none;
+            
             
 
         }
@@ -244,8 +260,8 @@
 
 .total-price{
     position: absolute;
-    top: 173%;
-    right: 40%;
+    top: 125%;
+    right: 41%;
     display: flex;
     align-items: center;
     padding-top: 10px;
@@ -256,9 +272,9 @@
     border-top: 1px solid #000;
     font-weight: bold;
     position: absolute;
-    top: 180%;
-    right: 39%;
-    width: 54%;
+    top: 130%;
+    right: 40%;
+    width: 53%;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -268,7 +284,7 @@
     display: none;
 }
 .product-remove{
-      position: absolute;
+    position: absolute;
     right: 39%;
     width: 54%;
     display: flex;
@@ -292,3 +308,8 @@
 .shipping-calculator-button{
     display: none;
 }
+
+.woocommerce ul#shipping_method li{
+    margin-left: 220px;
+}
+

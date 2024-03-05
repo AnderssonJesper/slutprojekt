@@ -21,6 +21,7 @@ defined('ABSPATH') || exit;
 ?>
 
 
+
 <div class="cart_totals <?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action('woocommerce_before_cart_totals'); ?>
@@ -59,30 +60,30 @@ defined('ABSPATH') || exit;
 			</tr>
 		<?php endforeach; ?>
 
-		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+		<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
 
-			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
+			<?php do_action('woocommerce_cart_totals_before_shipping'); ?>
 
 			<?php wc_cart_totals_shipping_html(); ?>
 
-			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
+			<?php do_action('woocommerce_cart_totals_after_shipping'); ?>
 
-		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
+		<?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) : ?>
 
 			<tr class="shipping">
-				<th><?php esc_html_e( 'Shipping', 'woocommerce' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
+				<th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
+				<td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>"><?php woocommerce_shipping_calculator(); ?></td>
 			</tr>
 
-		
 
-					<tr class="shipping">
-						<th><?php echo esc_html($label); ?></th>
-						<td data-title="<?php echo esc_attr($label); ?>"><?php echo wp_kses_post($cost); ?></td>
-					</tr>
+
+			<tr class="shipping">
+				<th><?php echo esc_html($label); ?></th>
+				<td data-title="<?php echo esc_attr($label); ?>"><?php echo wp_kses_post($cost); ?></td>
+			</tr>
 			<?php
-				
-			
+
+
 			?>
 		<?php endif; ?>
 
@@ -138,6 +139,7 @@ defined('ABSPATH') || exit;
 		<?php do_action('woocommerce_cart_totals_after_order_total'); ?>
 
 	</table>
+	
 
 	<div class="wc-proceed-to-checkout">
 		<?php do_action('woocommerce_proceed_to_checkout'); ?>
@@ -146,3 +148,4 @@ defined('ABSPATH') || exit;
 	<?php do_action('woocommerce_after_cart_totals'); ?>
 
 </div>
+
