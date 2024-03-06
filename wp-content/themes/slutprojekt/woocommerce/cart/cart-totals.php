@@ -60,32 +60,40 @@ defined('ABSPATH') || exit;
 			</tr>
 		<?php endforeach; ?>
 
-		<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
-
-			<?php do_action('woocommerce_cart_totals_before_shipping'); ?>
-
-			<?php wc_cart_totals_shipping_html(); ?>
-
-			<?php do_action('woocommerce_cart_totals_after_shipping'); ?>
-
-		<?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) : ?>
-
-			<tr class="shipping">
-				<th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
-				<td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>"><?php woocommerce_shipping_calculator(); ?></td>
-			</tr>
-
-
-
+		<?php
+		if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) {
+			do_action('woocommerce_cart_totals_before_shipping');
+			if (WC()->cart->total < 1000) {
+				// Visa fraktalternativen om ordervärdet är under 1000kr
+				wc_cart_totals_shipping_html();
+			} else {
+				// Visa bara "Free Shipping" om ordervärdet är över 1000kr
+		?>
+				<tr class="shipping">
+					<th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
+					<td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>">
+						<ul id="shipping_method" class="woocommerce-shipping-methods">
+							<li>
+								<input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_free_shipping2" value="free_shipping:2" class="shipping_method" checked="checked">
+								<label for="shipping_method_0_free_shipping2">Free shipping</label>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			<?php
+			}
+			do_action('woocommerce_cart_totals_after_shipping');
+		} elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) {
+			// Visa fraktberäknaren om det är nödvändigt att beräkna frakten
+			?>
 			<tr class="shipping">
 				<th><?php echo esc_html($label); ?></th>
 				<td data-title="<?php echo esc_attr($label); ?>"><?php echo wp_kses_post($cost); ?></td>
 			</tr>
-			<?php
+		<?php
+		}
+		?>
 
-
-			?>
-		<?php endif; ?>
 
 
 
@@ -139,7 +147,7 @@ defined('ABSPATH') || exit;
 		<?php do_action('woocommerce_cart_totals_after_order_total'); ?>
 
 	</table>
-	
+
 
 	<div class="wc-proceed-to-checkout">
 		<?php do_action('woocommerce_proceed_to_checkout'); ?>
@@ -148,4 +156,3 @@ defined('ABSPATH') || exit;
 	<?php do_action('woocommerce_after_cart_totals'); ?>
 
 </div>
-

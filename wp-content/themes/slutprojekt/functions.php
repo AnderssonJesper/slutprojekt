@@ -635,3 +635,13 @@ function custom_related_products_shortcode($atts)
 }
 add_shortcode('custom_related_products', 'custom_related_products_shortcode');
 
+
+
+
+
+
+
+
+
+
+
