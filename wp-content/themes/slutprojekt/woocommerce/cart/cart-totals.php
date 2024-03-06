@@ -64,10 +64,10 @@ defined('ABSPATH') || exit;
 		if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) {
 			do_action('woocommerce_cart_totals_before_shipping');
 			if (WC()->cart->total < 1000) {
-				// Visa fraktalternativen om ordervärdet är under 1000kr
+				
 				wc_cart_totals_shipping_html();
 			} else {
-				// Visa bara "Free Shipping" om ordervärdet är över 1000kr
+				
 		?>
 				<tr class="shipping">
 					<th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
@@ -84,7 +84,7 @@ defined('ABSPATH') || exit;
 			}
 			do_action('woocommerce_cart_totals_after_shipping');
 		} elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) {
-			// Visa fraktberäknaren om det är nödvändigt att beräkna frakten
+			
 			?>
 			<tr class="shipping">
 				<th><?php echo esc_html($label); ?></th>
